@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Free Comment",
+  "version": "1.0.0",
+  "description": "Enable Disabled Youtube Comments",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injectApp.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
