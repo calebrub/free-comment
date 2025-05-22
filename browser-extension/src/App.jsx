@@ -1,10 +1,14 @@
 import React from 'react';
+import {Box} from "@mui/material";
+import CommentList from "./components/CommentsBody/CommentList.jsx";
+import AddComment from "./components/AddComment/AddComment.jsx"
+
 
 export default function App() {
     return (
-        <div style={{ padding: '1rem', backgroundColor: '#fffbe6' }}>
-            <h2>🔧 Custom React Comments</h2>
-            <p>This section has been replaced with your own component!</p>
-        </div>
+        <Box sx={{ padding: 2, display: "flex", flexDirection: "column", gap: 2, backgroundColor: '#efe3cc', borderRadius: 2 }}>
+            <AddComment/>
+            <CommentList/>
+        </Box>
     );
 }
