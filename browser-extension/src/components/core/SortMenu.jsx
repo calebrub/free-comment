@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import {Box, Button, Menu, MenuItem, Typography} from '@mui/material';
+import React, {useState} from 'react';
+import {Box, Button, Menu, MenuItem} from '@mui/material';
 import SortIcon from '@mui/icons-material/Sort';
 
 export default function SortMenu() {
