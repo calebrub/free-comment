@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button} from "@mui/material";
 
-export default function CommentButton({saveComment}){
+export default function CommentButton({saveComment, ...props}){
     return (
         <Button
             variant="contained"
@@ -11,10 +11,13 @@ export default function CommentButton({saveComment}){
                 textTransform: "none",
                 borderRadius: '24px',
                 '&.MuiButton-containedPrimary': {
-                    backgroundColor: '#1976d2',
-                    '&:hover, &:focus, &:active': { backgroundColor: '#0b5ed7' },
+                    backgroundColor: theme => theme.palette.primary.main,
+                    '&:hover, &:focus, &:active': { 
+                        backgroundColor: theme => theme.palette.primary.dark || '#0b5ed7',
+                    },
                 }
             }}
+            {...props}
         >
             Comment
         </Button>

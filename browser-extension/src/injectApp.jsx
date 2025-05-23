@@ -5,10 +5,21 @@ import {createTheme, ThemeProvider} from "@mui/material";
 
 const mountNode = document.getElementById('yt-react-comments-replacement');
 
+const isDarkModeEnabled = document.documentElement.classList.contains('dark');
+
 const theme = createTheme({
     palette: {
+        mode: isDarkModeEnabled ? 'dark' : 'light',
         primary: {
-            main: '#68c7cb',
+            main: '#3da6ff',
+        },
+        background: {
+            default: isDarkModeEnabled ? '#121212' : '#ffffff',
+            paper: isDarkModeEnabled ? '#1e1e1e' : '#ffffff',
+        },
+        text: {
+            primary: isDarkModeEnabled ? '#ffffff' : '#000000',
+            secondary: isDarkModeEnabled ? '#b0b0b0' : '#666666',
         },
     },
     components: {
@@ -23,6 +34,7 @@ const theme = createTheme({
         }
     }
 });
+
 
 if (mountNode) {
     const root = createRoot(mountNode);
